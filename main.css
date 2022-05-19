@@ -45,9 +45,5 @@ body {
 .playerRed {
     border-top: 10px solid;
     border-top-color: red;
+    background-color: red
 }
-
-
-/* .playerRedTurn:hover {
-
-} */
