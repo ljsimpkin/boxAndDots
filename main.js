@@ -43,12 +43,47 @@ function drawBoard(boardNode) {
     BOARD.reduce(cellsToNodes, boardNode)
 }
 
+// function cellsToNodes(boardNode, cell) {
+//     var cell = document.createElement('div')
+//     cell.classList.add('cell')
+//     cell.classList.add(cell.playerColor)
+//     boardNode.appendChild(cell)
+//     return boardNode
+// }
+
 function cellsToNodes(boardNode, cell) {
-    var node = document.createElement('div')
-    node.classList.add(cell.playerColor)
-    boardNode.appendChild(node)
+    var cell = document.createElement('div')
+    var left = document.createElement('div')
+    var right = document.createElement('div')
+    var top = document.createElement('div')
+    var bottom = document.createElement('div')
+
+    cell.classList.add('cell')
+    left.classList.add('cellLeft')
+    right.classList.add('cellRight')
+    top.classList.add('cellTop')
+    bottom.classList.add('cellBottom')
+
+    cell.appendChild(left)
+    cell.appendChild(right)
+    cell.appendChild(top)
+    cell.appendChild(bottom)
+
+    boardNode.appendChild(cell)
     return boardNode
 }
+
+// function insideCells() {
+//     var left = document.createElement('div')
+//     var right = document.createElement('div')
+//     var top = document.createElement('div')
+//     var bottom = document.createElement('div')
+
+//     left.classList.add('leftCell')
+//     right.classList.add('rightCell')
+//     top.classList.add('topCell')
+//     bottom.classList.add('bottomCell')
+// }
 
 function displayMessage(msg, id) {
     document.getElementById(id || 'message').innerHTML = '<p>' + msg + '</p>'
